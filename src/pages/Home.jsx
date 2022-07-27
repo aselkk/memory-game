@@ -6,6 +6,19 @@ function Home() {
 
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [inputData, setInputData] = useState('')
+    const leaderboard = JSON.parse(localStorage.getItem('leaderboard'))
+    // const [name, turns, time] = leaderboard
+
+    const getUser = () => {
+        leaderboard?.map((leader) => {
+            // const [username, turns, time] = leader
+            // console.log(username, turns, time);
+            // console.log(leader);
+            // const username = leader.name
+            // console.log(username);
+        })
+    }
+    getUser()
 
     const showModal = () => {
         setIsModalVisible(true);
@@ -32,7 +45,7 @@ function Home() {
         <div>
             <div className="container">
                 <div id="home">
-                    <h1>Welcome to the Memory Game </h1>
+                    <h1>Welcome to the Memory Game ! </h1>
                     <form action="">
                         <label htmlFor="name">please, enter your name</label>
                         <input 
@@ -54,10 +67,14 @@ function Home() {
                         <button className='bttn bttn--leaderboard' onClick={showModal}>leaderboard</button>
                     </div>
                     <Modal title="leaderboard" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                        <p>Name ---- Points</p>
-                        <p>Name ---- Points</p>
-                        <p>Name ---- Points</p>
-                        <p>Name ---- Points</p>
+                        <ol>
+                            {leaderboard ? leaderboard?.map((el,index) => (
+                                <li key={index}>
+                                    <p>{el.username}: <span className="">{el.points}</span></p>
+                                    
+                                </li>
+                            )) : <h3 style={{textAlign: 'center'}}>there is no players yet! <br/> be the first one!</h3>}
+                        </ol>
                     </Modal>
                 </div>
             </div>

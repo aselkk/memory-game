@@ -64,10 +64,21 @@ a, a:hover{
 
 .ant-modal-content,
 .ant-modal-header{
+    // height: 300px;
     background-color: #937cb1f9;
     @include display-flex(center, column);
     width: 100%;
 }
+
+// .ant-modal-content{
+//     overflow: scroll;
+//     height: 600px;
+// }
+
+// .ant-modal{
+//     overflow: scroll;
+//     height: 600px;
+// }
 
 .ant-modal-title {
     color: #fff;
