@@ -1,0 +1,25 @@
+.card {
+    position: relative;
+    .front {
+        transform: rotateY(90deg);
+        position: absolute;
+        transition: all ease-in 0.2s;
+    }
+    .flipped .front {
+        transform: rotateY(0deg);
+        transition-delay: 0.2s;
+        -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0); 
+        box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 5px 5px 15px 5px rgba(0,0,0,0);
+    }
+
+    .back{
+        transition: all ease-in 0.2s;
+        transition-delay: 0.2s;
+    }
+
+    .flipped .back {
+        transform: rotateY(90deg);
+        transition-delay: 0s;
+    }
+
+}

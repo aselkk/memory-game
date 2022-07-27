@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+@import '~antd/dist/antd.css';
+@import './home';
+@import './game';
+@import './cardItem';
+@import './variables';
+
+* {
+    font-family: Raleway, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+body{
+    background-color: #1b1523;
+    letter-spacing: 3px;
+}
+
+.App, 
+#game{
+    width: 100vw;
+    height: 100vh;
+    @include display-flex(center, column);
+}
+
+.container{
+    input { 
+        background: #937cb17c!important;
+        width: 400px!important;
+        cursor: text!important;
+        padding-left: 12px;
+        &:focus{
+            outline: none;
+        }
+    }
+    .bttn,
+    input {
+        width: 400px;
+        height: 40px;
+        border:none;
+        color: #fff;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        background: #937cb1f9;
+        border-radius: 3px;
+        cursor: pointer;
+        &:hover{
+            background: #834c93f9;
+        }
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+    margin: 0;
+}
+
+a, a:hover{
+    color: inherit;
+}
+
+.ant-modal-content,
+.ant-modal-header{
+    background-color: #937cb1f9;
+    @include display-flex(center, column);
+    width: 100%;
+}
+
+.ant-modal-title {
+    color: #fff;
+}
+
+.ant-modal-footer {
+    display: none;
+}

@@ -1,0 +1,51 @@
+@import './variables';
+
+#game{
+    .container{
+        @include display-flex(center, column);
+        justify-content:center;
+        width: 70%!important;
+        gap: 20px;
+    }
+    
+    .gameplay__top{
+        @include display-flex(center, row);
+        justify-content: space-between;
+        width: 100%;
+        gap: 10px;
+        div{
+            @include display-flex(center, column);
+            gap: 10px;
+            width: 33%
+        }
+        .top__right{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .top__left{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+        button{
+            width: 60%;
+        }
+    }
+    .card-grid{
+        // display: flex;
+        // margin-top: 40px;
+        // grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        // grid-gap: 20px;
+        flex-wrap: wrap;
+        // width: 65%;
+        @include display-flex(unset, unset);
+        justify-content: space-between;
+        gap:10px 
+    }
+    img{
+        width: 130px;
+        height: 140px;
+        border: 1px solid;
+    }
+}

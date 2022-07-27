@@ -1,0 +1,16 @@
+@import './variables';
+
+#home{
+    @include display-flex(center, column);
+    gap: 20px;
+    color: #fff;
+    form {
+        @include display-flex(center, column);
+        gap: 5px;
+    }
+    .bttns{
+        @include display-flex(center, column);
+        gap: 7px;
+    }
+}
+
