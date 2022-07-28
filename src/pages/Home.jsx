@@ -1,45 +1,53 @@
 import {useState} from 'react'
-import { Link } from "react-router-dom";
-import { Button, Modal } from 'antd';
+import { Link } from "react-router-dom"
+import { Button, Modal } from 'antd'
 
 function Home() {
 
-    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [isModalVisible, setIsModalVisible] = useState(false)
     const [inputData, setInputData] = useState('')
     const leaderboard = JSON.parse(localStorage.getItem('leaderboard'))
-    // const [name, turns, time] = leaderboard
-
-    const getUser = () => {
-        leaderboard?.map((leader) => {
-            // const [username, turns, time] = leader
-            // console.log(username, turns, time);
-            // console.log(leader);
-            // const username = leader.name
-            // console.log(username);
-        })
-    }
-    getUser()
 
     const showModal = () => {
-        setIsModalVisible(true);
-    };
+        setIsModalVisible(true)
+    }
 
     const handleOk = () => {
-        setIsModalVisible(false);
-    };
+        setIsModalVisible(false)
+    }
 
     const handleCancel = () => {
-        setIsModalVisible(false);
-    };
+        setIsModalVisible(false)
+    }
 
     const handleChange = e => {
-        setInputData(e.target.value);
+        setInputData(e.target.value)
     }
 
     const handleClick = () => {
         localStorage.setItem('username', inputData)
-        console.log(inputData);
     }
+
+    let filteredByName = []
+    leaderboard?.forEach((player) => {
+        if (filteredByName.length) {
+            const res = filteredByName.findIndex((item) => item.username === player.username)
+            if (res >= 0) {
+                if (player.points < filteredByName[res].points) {
+                    filteredByName.splice(res, 1)
+                    filteredByName.push(player)
+                }
+            } else {
+                filteredByName.push(player)
+            }
+        } else {
+            filteredByName.push(player)
+        }
+    })
+
+    const filteredByScore = filteredByName.sort((sameName, filteredByName) =>  sameName.points - filteredByName.points)
+    console.log(filteredByScore);
+
 
     return (
         <div>
@@ -68,7 +76,7 @@ function Home() {
                     </div>
                     <Modal title="leaderboard" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                         <ol>
-                            {leaderboard ? leaderboard?.map((el,index) => (
+                            {leaderboard ? filteredByScore?.map((el,index) => (
                                 <li key={index}>
                                     <p>{el.username}: <span className="">{el.points}</span></p>
                                     
@@ -79,7 +87,7 @@ function Home() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
-export default Home;
+export default Home

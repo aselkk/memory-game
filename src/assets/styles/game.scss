@@ -33,12 +33,7 @@
         }
     }
     .card-grid{
-        // display: flex;
-        // margin-top: 40px;
-        // grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        // grid-gap: 20px;
         flex-wrap: wrap;
-        // width: 65%;
         @include display-flex(unset, unset);
         justify-content: space-between;
         gap:10px 
@@ -47,5 +42,62 @@
         width: 130px;
         height: 140px;
         border: 1px solid;
+    }
+}
+
+@media(max-width: 425px) {
+    #game {
+        width: 100vw;
+        height: fit-content!important;
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        /* align-items: center; */
+        flex-wrap: wrap;
+
+        .container{
+            width: 95%!important;
+            gap: 10px;
+
+            h2, 
+            h4, 
+            .bttn{
+                font-size: 14px!important;
+                text-align: center;
+                width: 100%!important;
+            }
+
+            .gameplay__top {
+                margin-top: 5px;
+            }
+
+            .card-grid {
+                flex-wrap: wrap;
+                display: flex;
+                flex-direction: unset; 
+                justify-content: center;
+                align-items: unset;
+                gap: 10px;
+
+                img {
+                    width: 73px;
+                    height: 65px;
+                    border: 1px solid;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px){
+    #game {
+        .container{
+            width: 99% !important
+        }
+        img {
+        width: 70px!important;
+        height: 65px!important;
+        border: 1px solid;
+        }
     }
 }

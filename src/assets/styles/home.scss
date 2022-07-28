@@ -14,3 +14,23 @@
     }
 }
 
+@media(max-width: 565px) {
+    #home {
+        h1{
+            text-align: center!important;
+        }
+    }
+}
+
+@media(max-width: 425px) {
+    #home {
+        input,
+        .bttns,
+        .bttn{
+            width: 100% !important;
+        }
+        .bttns{
+            width: 80% !important;
+        }
+    }
+}
