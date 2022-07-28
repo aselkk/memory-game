@@ -32,7 +32,6 @@ const cardImages = [
     {'img': hearthead, matched: false},
     {'img': quokka, matched: false},
     {'img': wadamelon, matched: false},
-    
 ]
 
 const Game = () => {
@@ -50,6 +49,7 @@ const Game = () => {
         const shuffledCards = [...cardImages, ...cardImages]
             .sort(() => Math.random() - 0.5)
             .map((card) => ({...card, id: Math.random()}))
+            
         setCards(shuffledCards)
         setTurns(0)
         setTime(0)
@@ -107,9 +107,9 @@ const Game = () => {
     }
 
     function secondsToTime(e){
-        const h = Math.floor(e / 3600).toString().padStart(2,'0'),
-                m = Math.floor(e % 3600 / 60).toString().padStart(2,'0'),
-                s = Math.floor(e % 60).toString().padStart(2,'0');
+        const 
+        m = Math.floor(e % 3600 / 60).toString().padStart(2,'0'),
+        s = Math.floor(e % 60).toString().padStart(2,'0');
         
         return m + ':' + s;
     }
@@ -164,7 +164,6 @@ const Game = () => {
                     <div className="top__right">
                         <h4>Flips: {turns}</h4>
                         <h4>time: {secondsToTime(time)}</h4>
-                        {/* <button onClick={endGame} style={{backgroundColor: '#ff5252'}} className='bttn'>finish the game</button> */}
                     </div>
                 </div>
                 <div className="card-grid">
