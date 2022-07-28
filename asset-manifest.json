@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/memory-game/static/css/main.86dafcdd.css",
+    "main.js": "/memory-game/static/js/main.2e6fd3fd.js",
+    "static/media/wadamelon.jpeg": "/memory-game/static/media/wadamelon.8048808cf6cdb2e0dc61.jpeg",
+    "static/media/seacat.jpeg": "/memory-game/static/media/seacat.fccd152a0487295b5bb8.jpeg",
+    "static/media/kittens.jpeg": "/memory-game/static/media/kittens.87c7a05ba9a844480751.jpeg",
+    "static/media/quokka.jpeg": "/memory-game/static/media/quokka.f9dfaeb6ded35442f695.jpeg",
+    "static/media/heart.jpeg": "/memory-game/static/media/heart.37ef2b9430361ad41395.jpeg",
+    "static/media/fox.jpeg": "/memory-game/static/media/fox.5cc6f275012950e87125.jpeg",
+    "static/media/cute.jpeg": "/memory-game/static/media/cute.8d416361b3b778aba5ae.jpeg",
+    "static/media/img.jpeg": "/memory-game/static/media/img.2cb7699ce5dd46b97422.jpeg",
+    "static/media/frog.jpeg": "/memory-game/static/media/frog.f335ba5cc04496c99acc.jpeg",
+    "static/media/black.jpeg": "/memory-game/static/media/black.1237efb75562c2e022ae.jpeg",
+    "static/media/hearthead.jpeg": "/memory-game/static/media/hearthead.3fdd5c18e1b5ae88189c.jpeg",
+    "static/media/sunflower.jpeg": "/memory-game/static/media/sunflower.f8fb09651f8d8bd3335a.jpeg",
+    "static/media/rainbow.jpeg": "/memory-game/static/media/rainbow.dc7049d69d99ad95381d.jpeg",
+    "static/media/duckie.jpeg": "/memory-game/static/media/duckie.a101bf2d76318ee10916.jpeg",
+    "static/media/blackccat.jpeg": "/memory-game/static/media/blackccat.584ee5241884c0e56874.jpeg",
+    "index.html": "/memory-game/index.html",
+    "main.86dafcdd.css.map": "/memory-game/static/css/main.86dafcdd.css.map",
+    "main.2e6fd3fd.js.map": "/memory-game/static/js/main.2e6fd3fd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.86dafcdd.css",
+    "static/js/main.2e6fd3fd.js"
+  ]
+}
