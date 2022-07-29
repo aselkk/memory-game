@@ -46,8 +46,6 @@ function Home() {
     })
 
     const filteredByScore = filteredByName.sort((sameName, filteredByName) =>  sameName.points - filteredByName.points)
-    console.log(filteredByScore);
-
 
     return (
         <div>

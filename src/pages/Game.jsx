@@ -49,7 +49,7 @@ const Game = () => {
         const shuffledCards = [...cardImages, ...cardImages]
             .sort(() => Math.random() - 0.5)
             .map((card) => ({...card, id: Math.random()}))
-            
+
         setCards(shuffledCards)
         setTurns(0)
         setTime(0)
@@ -58,11 +58,9 @@ const Game = () => {
         setIsModalVisible(false);
         setIntervalchik(
             setInterval(() => {
-                console.log('1');
                 setTime(prev => prev + 1)
             }, 1000)
         )
-        
     }
 
     const handleChoice = (card) => {
@@ -121,6 +119,7 @@ const Game = () => {
             
         }
         let leaderboard = JSON.parse(localStorage.getItem('leaderboard'))
+
         if (leaderboard) {
             leaderboard.push(user)
             localStorage.setItem('leaderboard', JSON.stringify(leaderboard))
