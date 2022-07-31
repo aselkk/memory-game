@@ -104,7 +104,7 @@ const Game = () => {
         setTurns(prev => prev + 1)
     }
 
-    function secondsToTime(e){
+    const secondsToTime = (e) => {
         const 
         m = Math.floor(e % 3600 / 60).toString().padStart(2,'0'),
         s = Math.floor(e % 60).toString().padStart(2,'0');
@@ -116,7 +116,6 @@ const Game = () => {
         const user = {
             'username': username,
             'points': (turns * time),
-            
         }
         let leaderboard = JSON.parse(localStorage.getItem('leaderboard'))
 
@@ -130,7 +129,7 @@ const Game = () => {
         }
     }
 
-    const endGame = (e) => {
+    const endGame = () => {
         createUser()
         clearInterval(intervalchik)
     }
@@ -155,14 +154,13 @@ const Game = () => {
                     <div className="top__left">
                         <button onClick={shuffleCards} className="bttn"> restart </button>
                         <button className="bttn"><Link to='/'> main page </Link></button>
-                        
                     </div>
                     <div className="top__center">
                         <h2>have fun, {username}!</h2>
                     </div>
                     <div className="top__right">
                         <h4>Flips: {turns}</h4>
-                        <h4>time: {secondsToTime(time)}</h4>
+                        <h4>time: { secondsToTime(time) }</h4>
                     </div>
                 </div>
                 <div className="card-grid">
@@ -171,14 +169,18 @@ const Game = () => {
                             key={card.id} 
                             card={card}
                             handleChoice={handleChoice} 
-                            flipped={card === choiceOne || card === choiceTwo || card.matched}
+                            flipped={ card === choiceOne || card === choiceTwo || card.matched }
                         />
                     ))}
                 </div>
-                    <Modal title={`good job, ${username}!`} visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                        <Button type='primary' style={{ background: "rgb(127 82 186 / 98%)", border: "none", marginRight: '10px' }} onClick={shuffleCards} className="bttn"> play again </Button>
-                        <Button type='primary' style={{ background: "rgb(127 82 186 / 98%)", border: "none" }} className="bttn"><Link to='/'> main page </Link></Button>    
-                        <p style={{textAlign: 'center', marginTop: '10px'}}>your score is: {turns * time}</p>
+                    <Modal 
+                        title={`good job, ${username}!`} 
+                        visible={isModalVisible} 
+                        onOk={handleOk} 
+                        onCancel={handleCancel}>
+                            <Button type='primary' style={{ background: "rgb(127 82 186 / 98%)", border: "none", marginRight: '10px' }} onClick={shuffleCards} className="bttn"> play again </Button>
+                            <Button type='primary' style={{ background: "rgb(127 82 186 / 98%)", border: "none" }} className="bttn"><Link to='/'> main page </Link></Button>    
+                            <p style={{ textAlign: 'center', marginTop: '10px' }}> your score is: { turns * time } </p>
                     </Modal>
             </div>
         </section>

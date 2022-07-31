@@ -4,7 +4,7 @@ import back from '../assets/images/black.jpeg'
 const CardItem = ({card, handleChoice, flipped}) => {
     return (
         <div className="card">
-            <div className={flipped ? 'flipped' : ' '}>
+            <div className={ flipped ? 'flipped' : ' '}>
                 <img 
                     className='front' 
                     src={card.img} 
