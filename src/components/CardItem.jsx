@@ -5,7 +5,10 @@ const CardItem = ({card, handleChoice, flipped}) => {
     return (
         <div className="card">
             <div className={flipped ? 'flipped' : ' '}>
-                <img className='front' src={card.img} alt="card-front" />
+                <img 
+                    className='front' 
+                    src={card.img} 
+                    alt="card-front" />
                 <img 
                     className='back' 
                     src={back} 
