@@ -46,6 +46,7 @@ const Game = () => {
     const [intervalchik, setIntervalchik] = useState()
 
     const shuffleCards = () => {
+        clearInterval(intervalchik)
         const shuffledCards = [...cardImages, ...cardImages]
             .sort(() => Math.random() - 0.5)
             .map((card) => ({...card, id: Math.random()}))
@@ -153,7 +154,9 @@ const Game = () => {
                 <div className="gameplay__top">
                     <div className="top__left">
                         <button onClick={shuffleCards} className="bttn"> restart </button>
-                        <button className="bttn"><Link to='/'> main page </Link></button>
+                        <button className="bttn">
+                            <Link style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%'}} to='/'> main page </Link>
+                        </button>
                     </div>
                     <div className="top__center">
                         <h2>have fun, {username}!</h2>

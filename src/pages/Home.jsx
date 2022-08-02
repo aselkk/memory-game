@@ -1,11 +1,12 @@
 import {useState} from 'react'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Modal } from 'antd'
 import Leaderboard from '../components/Leaderboard'
 
 function Home() {
     const [isModalVisible, setIsModalVisible] = useState(false)
     const [inputData, setInputData] = useState('')
+    const navigate = useNavigate();
 
     const showModal = () => {
         setIsModalVisible(true)
@@ -27,6 +28,16 @@ function Home() {
         localStorage.setItem('username', inputData)
     }
 
+    const handler = (e) => {
+        if(e.key === 'Enter'){
+            navigate('/game')
+            localStorage.setItem('username', inputData)
+            // alert('handler func')
+        } else {
+            return
+        }
+    }
+
     return (
         <div>
             <div className="container">
@@ -41,14 +52,17 @@ function Home() {
                             type="text"
                             onChange={handleChange}
                             value={inputData}
+                            onKeyPress={inputData ? (e) => handler(e) : {}}
                         />
                     </form>
                     <div className="bttns">
                         <button
                             style={ inputData ? {} : { backgroundColor: 'gray', cursor:'not-allowed' } } 
                             disabled={ inputData ? true : false } 
-                            className='bttn bttn--start' >
-                                <Link style={ inputData ? {} : { backgroundColor: 'gray', color: 'black', cursor:'not-allowed' }}  onClick={handleClick}  to={inputData ? "game" : '/'} >start the game</Link>
+                            className='bttn bttn--start'
+                            >
+                                <Link style={ inputData ? {display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', height: '100%'} : { backgroundColor: 'gray', color: 'black', cursor:'not-allowed'}}  
+                            onClick={handleClick}  to={inputData ? "game" : '/'} >start the game</Link>
                         </button>
                         <button className='bttn bttn--leaderboard' onClick={showModal}>leaderboard</button>
                     </div>

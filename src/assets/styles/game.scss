@@ -45,6 +45,46 @@
     }
 }
 
+@media (max-width: 1385px){
+    #game {
+        .container{
+            width: 80% !important
+        }
+    }
+}
+
+@media (max-width: 1211px){
+    #game {
+        .container{
+            width: 90% !important
+        }
+    }
+}
+
+@media (max-width: 1080px){
+    #game {
+        .container{
+            width: 62% !important;
+
+            img {
+                width: 76px !important;
+                height: 86px !important;
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 674px){
+    #game {
+        .container{
+            width: 96% !important;
+        }
+        
+    }
+}
+
+
 @media(max-width: 425px) {
     #game {
         width: 100vw;
@@ -78,8 +118,8 @@
                 gap: 10px;
 
                 img {
-                    width: 73px;
-                    height: 65px;
+                    width: 73px!important;
+                    height: 72px!important;
                     border: 1px solid;
                 }
             }
@@ -87,15 +127,26 @@
     }
 }
 
-@media (max-width: 320px){
+@media (max-width: 325px){
     #game {
         .container{
-            width: 99% !important
+            width: 99% !important;
+            .card-grid {
+                flex-wrap: wrap;
+                display: flex;
+                flex-direction: unset; 
+                justify-content: center;
+                align-items: unset;
+                gap: 10px;
+
+                img {
+                    width: 70px!important;
+                    height: 65px!important;
+                    border: 1px solid;
+                }
+            }
+            
         }
-        img {
-        width: 70px!important;
-        height: 65px!important;
-        border: 1px solid;
-        }
+        
     }
 }
