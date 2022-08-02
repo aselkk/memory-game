@@ -63,10 +63,29 @@ a, a:hover{
 }
 
 .ant-modal-content,
-.ant-modal-header{
+.ant-modal-header,
+.ant-modal-body {
     background-color: #937cb1f9;
     @include display-flex(center, column);
     width: 100%;
+    ol {
+        width: 100%;
+        div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // justify-content: space-between;
+            font-weight: 700;
+        }
+        li {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: start;
+            // padding-left: 3px;
+        }
+    }
 }
 
 .ant-modal-title {

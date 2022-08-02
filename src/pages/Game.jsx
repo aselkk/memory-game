@@ -3,7 +3,7 @@ import { Button, Modal } from 'antd';
 import { Link } from "react-router-dom";
 import CardItem from '../components/CardItem';
 import sunflower from '../assets/images/sunflower.jpeg'
-import heart from '../assets/images/heart.jpeg'
+import grumpy from '../assets/images/grumpy.jpeg'
 import blackccat from '../assets/images/blackccat.jpeg'
 import seacat from '../assets/images/seacat.jpeg'
 import duckie from '../assets/images/duckie.jpeg'
@@ -11,27 +11,27 @@ import frog from '../assets/images/frog.jpeg'
 import img from '../assets/images/img.jpeg'
 import kittens from '../assets/images/kittens.jpeg'
 import cute from '../assets/images/cute.jpeg'
-import rainbow from '../assets/images/rainbow.jpeg'
+import legs from '../assets/images/legs.jpeg'
 import fox from '../assets/images/fox.jpeg'
 import hearthead from '../assets/images/hearthead.jpeg'
-import quokka from '../assets/images/quokka.jpeg'
+import bear from '../assets/images/bear.jpeg'
 import wadamelon from '../assets/images/wadamelon.jpeg'
 
 const cardImages = [
-    {'img': blackccat, matched: false},
-    {'img': frog, matched: false},
+    // {'img': blackccat, matched: false},
+    // {'img': frog, matched: false},
     {'img': duckie, matched: false},
-    {'img': sunflower, matched: false},
-    {'img': heart, matched: false},
+    // {'img': sunflower, matched: false},
+    // {'img': grumpy, matched: false},
     {'img': seacat, matched: false},
-    {'img': img, matched: false},
-    {'img': kittens, matched: false},
-    {'img': cute, matched: false},
-    {'img': rainbow, matched: false},
-    {'img': fox, matched: false},
-    {'img': hearthead, matched: false},
-    {'img': quokka, matched: false},
-    {'img': wadamelon, matched: false},
+    // {'img': img, matched: false},
+    // {'img': kittens, matched: false},
+    // {'img': cute, matched: false},
+    // {'img': legs, matched: false},
+    // {'img': fox, matched: false},
+    // {'img': hearthead, matched: false},
+    {'img': bear, matched: false},
+    // {'img': wadamelon, matched: false},
 ]
 
 const Game = () => {
@@ -54,6 +54,7 @@ const Game = () => {
         setCards(shuffledCards)
         setTurns(0)
         setTime(0)
+        setCorrect(0)
         setChoiceOne(null)
         setChoiceTwo(null)
         setIsModalVisible(false);
@@ -95,7 +96,10 @@ const Game = () => {
         }
         if(correct > 0 && correct == cards.length){
             endGame()
-            showModal()
+            setTimeout(() => {
+                showModal() 
+            }, 1100);
+            
         }
     }, [choiceTwo])
 
@@ -117,6 +121,8 @@ const Game = () => {
         const user = {
             'username': username,
             'points': (turns * time),
+            'turns': turns,
+            'time': time
         }
         let leaderboard = JSON.parse(localStorage.getItem('leaderboard'))
 
@@ -173,6 +179,7 @@ const Game = () => {
                             card={card}
                             handleChoice={handleChoice} 
                             flipped={ card === choiceOne || card === choiceTwo || card.matched }
+                            matched = { card.matched }
                         />
                     ))}
                 </div>
@@ -181,9 +188,13 @@ const Game = () => {
                         visible={isModalVisible} 
                         onOk={handleOk} 
                         onCancel={handleCancel}>
-                            <Button type='primary' style={{ background: "rgb(127 82 186 / 98%)", border: "none", marginRight: '10px' }} onClick={shuffleCards} className="bttn"> play again </Button>
-                            <Button type='primary' style={{ background: "rgb(127 82 186 / 98%)", border: "none" }} className="bttn"><Link to='/'> main page </Link></Button>    
-                            <p style={{ textAlign: 'center', marginTop: '10px' }}> your score is: { turns * time } </p>
+                            <div>
+                                <Button type='primary' style={{ background: "rgb(127 82 186 / 98%)", border: "none", marginRight: '10px' }} onClick={shuffleCards} className="bttn"> play again </Button>
+                                <Button type='primary' style={{ background: "rgb(127 82 186 / 98%)", border: "none" }} className="bttn"><Link to='/'> main page </Link></Button>    
+                            </div>
+                            <p style={{ textAlign: 'center', marginTop: '10px' }}> turns: { turns } </p>
+                            <p style={{ textAlign: 'center', marginTop: '10px' }}> time: { time } </p>
+                            <p style={{ textAlign: 'center', marginTop: '10px' }}> total score: { turns * time } </p>
                     </Modal>
             </div>
         </section>
