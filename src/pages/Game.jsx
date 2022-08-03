@@ -18,20 +18,20 @@ import bear from '../assets/images/bear.jpeg'
 import wadamelon from '../assets/images/wadamelon.jpeg'
 
 const cardImages = [
-    // {'img': blackccat, matched: false},
-    // {'img': frog, matched: false},
+    {'img': blackccat, matched: false},
+    {'img': frog, matched: false},
     {'img': duckie, matched: false},
-    // {'img': sunflower, matched: false},
-    // {'img': grumpy, matched: false},
+    {'img': sunflower, matched: false},
+    {'img': grumpy, matched: false},
     {'img': seacat, matched: false},
-    // {'img': img, matched: false},
-    // {'img': kittens, matched: false},
-    // {'img': cute, matched: false},
-    // {'img': legs, matched: false},
-    // {'img': fox, matched: false},
-    // {'img': hearthead, matched: false},
+    {'img': img, matched: false},
+    {'img': kittens, matched: false},
+    {'img': cute, matched: false},
+    {'img': legs, matched: false},
+    {'img': fox, matched: false},
+    {'img': hearthead, matched: false},
     {'img': bear, matched: false},
-    // {'img': wadamelon, matched: false},
+    {'img': wadamelon, matched: false},
 ]
 
 const Game = () => {
